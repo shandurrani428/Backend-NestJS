@@ -1,4 +1,5 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { QuestionsEntity } from 'src/module/quiz/entities/question.entity';
 import { QuizEntity } from 'src/module/quiz/entities/quiz.entity';
 
 export const typeOrmConfig: TypeOrmModuleOptions = {
@@ -9,7 +10,7 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
     password: 'shan007',
     database: 'QuizApp',
     schema: "public",
-    entities: [QuizEntity],
+    entities: [QuizEntity, QuestionsEntity],
     synchronize: true,
     logging: true,
 }

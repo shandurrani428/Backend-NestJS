@@ -1,9 +1,9 @@
 import { IS_LENGTH, IsNotEmpty, Length } from "class-validator";
 
-export class CreateQuiz {
+export class CreateQuizDto {
 
     @IsNotEmpty({ message: "Should not me empty the titleQuiz" })
-    titleQuiz: string;
+    title: string;
     @IsNotEmpty({ message: "Should not me empty the Description" })
     @Length(2)
     description: string
