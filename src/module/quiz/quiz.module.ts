@@ -5,11 +5,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { QuizEntity } from './entities/quiz.entity';
 import { QuestionController } from './controllers/question.controller';
 import { QuestionsEntity } from './entities/question.entity';
-
+import { ApiTags } from '@nestjs/swagger';
+import { QuestionService } from './services/question.service';
 
 @Module({
     imports: [TypeOrmModule.forFeature([QuizEntity, QuestionsEntity])],
     controllers: [QuizController, QuestionController],
-    providers: [QuizService]
+    providers: [QuizService, QuestionService]
 })
 export class QuizModule { }

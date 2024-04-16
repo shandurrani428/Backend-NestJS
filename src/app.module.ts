@@ -5,9 +5,13 @@ import { AppService } from './app.service';
 import { typeOrmConfig } from './config/typeorm.config';
 import { QuizModule } from './module/quiz/quiz.module';
 import { UserModule } from './module/user/user.module';
+import { CitiesController } from './module/cities/cities.controller';
+import { CitiesModule } from './module/cities/cities.module';
+import { ApiProperty } from '@nestjs/swagger';
+
 
 @Module({
-  imports: [QuizModule, TypeOrmModule.forRoot(typeOrmConfig)],
+  imports: [TypeOrmModule.forRoot(typeOrmConfig), QuizModule, CitiesModule],
   controllers: [AppController],
   providers: [AppService],
 })

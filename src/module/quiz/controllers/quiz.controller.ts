@@ -1,7 +1,9 @@
 import { Body, Controller, Get, HttpCode, HttpStatus, Post, UsePipes, ValidationPipe } from '@nestjs/common';
 import { QuizService } from '../services/quiz.service';
 import { CreateQuizDto } from '../dto/CreateQuiz.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags("Quiz")
 @Controller('quiz')
 export class QuizController {
   constructor(private readonly quizService: QuizService) { }
